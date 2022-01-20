@@ -14,7 +14,7 @@ from werkzeug.exceptions import Forbidden
 import os
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
+app.config['SECRET_KEY'] = "8BYkEfBA6O6donzWlSihBXox7C0sKR6b"
 ckeditor = CKEditor(app)
 Bootstrap(app)
 
@@ -29,7 +29,7 @@ Base = declarative_base()
 login_manager = LoginManager()
 login_manager.init_app(app)
 
-ADMIN_EMAIL = os.environ.get("EMAIL_ID")
+ADMIN_EMAIL = "karanupadhyay.2010@gmail.com"
 
 gravatar = Gravatar(app,
                     size=200,
@@ -81,7 +81,7 @@ class Comment(db.Model, Base):
     parent_blog_post_id = db.Column(db.Integer, sqlalchemy.ForeignKey("blog_posts.id"))
     parent_blog_post = relationship("BlogPost", back_populates="child_comment")
 
-# db.create_all()
+db.create_all()
 
 
 def all_users_emails():
