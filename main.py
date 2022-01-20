@@ -81,7 +81,7 @@ class Comment(db.Model, Base):
     parent_blog_post_id = db.Column(db.Integer, sqlalchemy.ForeignKey("blog_posts.id"))
     parent_blog_post = relationship("BlogPost", back_populates="child_comment")
 
-db.create_all()
+# db.create_all()
 
 
 def all_users_emails():
