@@ -14,7 +14,7 @@ from werkzeug.exceptions import Forbidden
 import os
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.environ.get("BLOG_POST_PROJECT_KEY")
+app.config['SECRET_KEY'] = "8BYkEfBA6O6donzWlSihBXox7C0sKR6b"
 ckeditor = CKEditor(app)
 Bootstrap(app)
 
@@ -28,7 +28,7 @@ Base = declarative_base()
 login_manager = LoginManager()
 login_manager.init_app(app)
 
-ADMIN_EMAIL = os.environ.get("KAUP_EMAIL_ID")
+ADMIN_EMAIL = "karanupadhyay.2010@gmail.com"
 
 gravatar = Gravatar(app,
                     size=200,
